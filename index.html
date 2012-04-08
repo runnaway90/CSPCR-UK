@@ -1,0 +1,37 @@
+﻿<HTML>
+    <HEAD><LINK rel="stylesheet" href="files/s.css" type="text/css"></HEAD>
+    <BODY><div id="blue"></div><div id="red"></div><div id="all">
+        <div id="bookmarks"> 
+            <!--<p class="bookmark" style="padding-bottom:1em; font-weight:bold;">Jump menu</p>-->
+            <a class="inside" href="#top"><p class="bookmark button">Acasă</p></a>
+            <a class="inside" href="#q1"><p class="bookmark button">Question 1</p></a>
+            <a class="inside" href="#q2"><p class="bookmark button">Question 2</p></a>
+            <a class="inside" href="#q3"><p class="bookmark button">Question 3</p></a>
+            <a class="inside" href="#outro"><p class="bookmark button">Final words</p></a>
+        </div> 
+        <a name="top"></a>
+        <div id="content">
+            <p><b>Introduction</b></p>
+            <p><a class="outside" href="http://sourceforge.net/projects/jskat/" target="_blank">JSkat</a> is an open-source project written entirely in Java. It is developed by Jan Schäfer (<a class="outside" href="http://sourceforge.net/users/jansch" target="_blank">jansch</a>) and Markus J. Luzius (<a class="outside" href="http://sourceforge.net/users/mjluzius" target="_blank">mjluzius</a>). The links in the parenthesis show recent activity within the project from both users; also, <a class="outside" href="http://jskat.svn.sourceforge.net/viewvc/jskat/jskat/trunk/src/main/java/org/jskat/" target="_blank">browsing the project's repositories</a> reveals that they both author source files. The project also has a <a class="outside" href="http://www.jskat.org/" target="_blank">website</a>. Although there are some topics on the <a class="outside" href="http://sourceforge.net/projects/jskat/forums/forum/251450" target="_blank">developers' forum</a>, it is clear to me that most of the discussions between the two active authors happen somewhere else.</p>
+            <a name="q1"></a><p class="newsection"><b>Question 1</b></p>
+            <p>I have enjoyed playing card games since childhood and learnt many new card games through high school. My friends and I used to spend many hours and days just chatting while dealing cards. Unfortunately, my friends from Edinburgh only play card games from the Poker family, and I am not an avid fan. I was tempted to join the Bridge Club, but decided not to. I have never played Skat before. It seems to be really popular in Germany, so I will enjoy learning a great game while also doing my assignment.
+            <p><b>What JSkat is.</b> JSkat is a piece of software written in Java inspired by the German three-player card game named <a class="outside" href="http://en.wikipedia.org/wiki/Skat_(card_game)" target="_blank">Skat</a>. In functionality, it is similar to the Hearts or Solitaire games found on some Windows machines. The GUI includes a virtual table where cards are dealt. It shows the user's cards face-up, while the faces of opponents' cards are hidden from view. JSkat includes two types of Artificial Intelligence, which guide non-human participants in the game. The project also has a module which provides functionality for playing the game against other human users of the software over the Internet, on <a class="outside" href="http://skatgame.net/iss/" target="_blank">official servers</a>. </p>
+            <p><b>Project architecture.</b> The project is modularized into several groups of packages that carry similar tasks. The most important folders and subfolders of the root are: <ul><li><b>ai</b>: short for Artificial Intelligence, controls behaviour of non-human players in a game<ul><li><b>algorithmic</b>: AI based on simple algorithms<li><b>nn</b>: contains many classes for managing a neural network, for training, holding data and making informed decisions<li><b>rnd</b>: implementation of a player that takes random decisions; for testing purposes</ul><li><b>control</b>: manages the game's mechanics, e.g. assigns roles such as "dealer" to players, cycles the players' turns; in this package there is the master class, which (citing from comments) <i>controls everything in JSkat</i><ul><li><b>iss</b>: interface between the local game and the mechanics of the game hosted by the International Skat Server</ul><li><b>data</b>: manages and provides all the information about the current tables<ul><li><b>iss</b>: provide data for non-local tables</ul><li><b>gui</b>: short for Graphical User Interface, contains 91 of the 200 source files; its subfolders also manage different parts of the UI, e.g. chat dialog for ISS games, card faces<ul><li><b>action</b>: specifies all actions that have to do with the interface, e.g. playing a card, opening the help dialog</ul><li><b>util</b>: holds information about card roles and ranks, game rules etc.</ul></p>
+            <p class="newsection"><b>Building JSkat.</b> The OS is Windows 7 64-bit, on an Asus laptop with a dual-core Intel processor. I also successfully built the project on DICE machines, but I will only present the experience I had on my personal computer.</p> 
+            <p>I run JRE7, which is packaged with <a class="outside" href="http://www.oracle.com/technetwork/java/javase/downloads/java-se-jdk-7-download-432154.html" target="_blank">JDK1.7.0</a>:</p>
+            <p class="code">JAVA_VERSION="1.7.0"<br>OS_NAME="Windows"<br>OS_VERSION="5.2"<br>OS_ARCH="amd64"<br>SOURCE=""</p>
+            <p>Downloaded Eclipse Helios for Java developers from <a class="outside" href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/helios/SR2/eclipse-java-helios-SR2-win32-x86_64.zip" target="_blank">here</a>. </p>
+            <p class="code">Eclipse IDE for Java Developers<br>Version: Helios Service Release 2<br>Build id: 20110218-0911</p>
+            <p>Downloaded the source code using SVN from the above-mentioned repository, imported and built it in Eclipse using:</p>
+            <p class="code">m2e - Maven Integration for Eclipse	1.0.100.20110804-1717<br>org.eclipse.m2e.feature.feature.group</p>
+            <p>Screenshot proving successful build:</p>
+            <p class="img"><img src="files/snap-small.png" alt="Screenshot"><br><br><a class="outside" href="files/snap-big.png" target="_blank">Full snapshot</a></p>
+            <p>I built the project with the "package" goal, so the output is a JAR file. The game runs perfectly from it. The first time I successfully built the project, I used the command line and only managed to run the game when I used the "mvn package" command.</p>
+            <a name="q2"></a><p class="newsection"><b>Question 2</b></p>
+            <a name="q3"></a><p class="newsection"><b>Question 3</b></p>
+            <a name="outro"></a><p class="newsection"><b>Final words</b></p>
+            <p>I am really happy with the project I chose. JSkat is a perfect mix of accessibility and challenge for me. It is also very interesting and I am looking forward to working on the second part of the assignment on it.</p>
+            <p>This page was written by Ozgur Osman, second year student in the School of Informatics of the University of Edinburgh, UUN s1047194. <a class="outside" href="mailto:o.osman@sms.ed.ac.uk">E-mail him</a>.</p>
+        </div>
+    </div></BODY>
+</HTML>

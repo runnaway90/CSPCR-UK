@@ -1,0 +1,76 @@
+Current ToDos during refactoring:
+
+================ General ==================        
+- Ouvert, Schneider and Schwarz should be only available in hand games
+- Show ouvert cards of another player 
+- Click on last card on a hand is not always recognized
+- i18n on all parts of the GUI 
+- Option for browsing all tricks of a game
+
+================== ISS ====================        
+- recognize invitation from other players
+- give up/accept give up during a game
+- show cards to other players during a game
+
+Old ToDos before refactoring:
+
+================ questions ==================        
+- What is the interpretation of skatGame and skatRound in the JSkatDataModel?
+  How does that relate to the terms "skat round" and "skat game" from the gui?
+  To what German terms do these translate? There should be three levels (suggestion): 
+  1) (Gesamt-)Spiel <=> match (?) ==> 1..n rounds
+  2) Runde          <=> round     ==> three or four games (in JSkat currently three)
+  3) (Einzel-)Spiel <=> game      ==> a single game (except for ramsch grand hand)
+
+[JS] This is correct, should be reflected in class structure.
+
+================ must =======================        
+- [JS ][old       ] lock the game rule options after a game has been started (i.e. ramsch game rules)
+- [JS ][old       ] "Schneider", "Schwarz" and "Ouvert" should only be available when playing hand
+- [JS ][old       ] Number of rounds to play is not set (NewSkatRound vs. Options!)
+        (is this still the case? seems to work now [2006-04-16])
+- [JS ][2006-04-16] changing the language in the options dialog doesn't have any effect
+- [JS ][2006-04-16] Introduction of new class SkatMatch that stands for a whole
+        match on a JSkatTable with 1..n rounds
+- [JS ][2006-04-25] using new enums introduced in Java 1.5 for coding game type, card color and rank etc.
+		see http://java.sun.com/j2se/1.5.0/docs/guide/language/enums.html for more information
+
+================ should =====================        
+- [JS ][old       ] layout of JSkat options
+- [JS ][old       ] add ramsch option: don't consider skat (as an additional radio button)
+- [JS ][old       ] add option if contra is allowed without bidding 18
+- [JS ][2006-04-16] add icons for "flip cards" and "last trick"
+- [JS ][2006-04-16] mark the player which is next by either an icon or a special color at the name
+        (so that you can actually see that it's your turn)
+- [JS ][2006-04-16] add safety question when abandoning a running skat round
+- [MJL][2006-04-16] make a nicer game over dialog
+- [JS ][2006-04-16] clean up the table after the game is finished (i.e. after "Game Over")
+
+================ nice to have ===============        
+- [JS ][old       ] accept a click anywhere in the card panel to clear the table
+- [JS ][2006-04-16] change icon for "about"
+- [JS ][2006-04-16] remember window position and size in properties for the next start
+- [JS ][2006-04-16] make an option for counting the points
+- [all][2006-04-18] write a more detaled javadoc, especially for the AIPlayer Interface
+- [MJL][2006-04-18] Replace System.out.println in JUnit classes by debug statements
+        
+================ postponed ==================        
+
+================ done =======================        
+- [JS ][2006-04-16] AIPlayerBBMC does not comply with the rules!!!
+- [MJL] handle "Jungfrau"
+- [MJL] handle "Durschmarsch"
+- [MJL] check ruleset (whether its ISPA rules or pub rules)
+- [JS ] integrate additional ramsch options
+- [JS ] add option whether Jacks in a Schieberamsch are allowed
+- [JS ] add option field for grand hand option to ramsch options
+- [JS ] add option if grand hand question should be asked in ramsch games
+- [JS ] disable bock and ramsch rules when playing by ISPA rules
+- [JS ] make sure that no Jacks are in the skat if this option is not enabled
+        (TODO check when a HumanPlayer changes the cards)
+- [JS ] fix Revolution option
+- [JS ] create a round separator in the scoreboard (to show which games belong to a round)
+        (either by a new column with the round # or by using different background colors)
+- [all] add grand hand option to ramsch
+- [MJL][2006-04-16] add a default log4j.properties file [was already there]
+        
