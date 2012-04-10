@@ -8,7 +8,7 @@ div#all
     margin: 0px;
     background: left top repeat-y url('files/left.png'),
         right top repeat-y url('files/right.png');
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Rosarivo', serif;
     font-size: 1em;
     color: #303030;
 }
@@ -92,3 +92,26 @@ p.button:active
     border-color: #AAAAAA #D0D0D0 #D0D0D0 #AAAAAA; 
 }
 
+
+
+
+
+
+
+
+
+/*
+font-family: 'Dosis', sans-serif;
+font-family: 'Rosarivo', serif;
+font-family: 'Pompiere', cursive;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Averia Serif Libre', cursive;
+font-family: 'Josefin Slab', serif;
+font-family: 'Fredoka One', cursive;
+font-family: 'Copse', serif;
+font-family: 'Asap', sans-serif;
+font-family: 'Raleway', cursive;
+font-family: 'Lobster Two', cursive;
+*/
