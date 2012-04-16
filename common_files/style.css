@@ -1,0 +1,297 @@
+body 
+{ 
+    margin: 0px auto 0px; /* align everything to centre */
+    max-width: 1024px; /* max-width */
+}
+#all 
+{
+    background: url('left.png') top left repeat-y,
+        url('right.png') top right repeat-y ;
+    font-family: 'Ubuntu', Calibri, sans-serif;
+    color: #303030; /* font-colour */
+}
+#blue, #red  /* divs for creating different bg colours */
+{ 
+    z-index: -1; /* behind bg images and other content */
+    position: fixed; /* don't move with scrolling */
+    height: 100%; /* cover all height */
+    width: 50%; /* cover only half width */
+}
+#blue 
+{ 
+    left: 0; /* cover left half */
+    background: #EEEEFF; /* barely blue */
+}
+#red 
+{ 
+    right: 0; /* cover right half */
+    background: #FFEEEE; /* barely red */
+}
+
+
+
+#sidebar 
+{
+    position: fixed; /* don't move with scrolling */
+    width: 160px; /* 160 */
+    height: 100%;
+    text-align: center; 
+    overflow-x: hidden; 
+}
+
+#logo {
+    display: block;
+    text-decoration: none;
+    width: 157px; /* 158 - 1 (from border below) */
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background: #9999FF; /* semi blue */
+    border-left: solid #E0E0E0 1px;
+    color: #303030; /* font-colour */
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 0.03em 0.03em 0.04em #EEEEFF;
+}
+#logo_extended {
+    display: none;
+    position: absolute;
+    top: 0;
+    text-decoration: none;
+    width: 157px; /* 158 - 1 (from border below) */
+    padding-top: 0.2em;
+    background: #9999FF; /* semi blue */
+    border-left: solid #E0E0E0 1px;
+    color: #303030; /* font-colour */
+    font-size: 0.9em;
+    text-shadow: 0.03em 0.03em 0.04em #EEEEFF;
+}
+#logo:hover + #logo_extended, #logo_extended:hover 
+{
+    display: block;
+}
+
+#editions_title 
+{
+    width: 157px; /* 158 - 1 (from border below) */
+    padding: 0.5em 0 0.5em;
+    border: solid #E0E0E0 1px;
+    border-right: none;
+    border-bottom-left-radius: 5px;
+    margin-bottom: 2em;
+    color: #787878;
+}
+#editions:hover > #editions_title
+{
+    width: 159px; /* 160 - 1 (from left border) */
+    color: #303030; /* font-colour */
+    background: #EEEEFF; /* barely blue */
+    border-color: #D0D0D0 #AAAAAA #AAAAAA #D0D0D0; 
+}
+
+#editions_links 
+{
+    display: none; /* links are hidden */
+}
+#editions_links > a 
+{
+    display: block; /* one link per row */
+    padding: 0.5em 0 0.5em;
+    text-decoration: none;
+    color: #303030; /* font-colour */
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    border-color: #EEEEFF; /* barely blue */
+}
+#editions_links > a.first_edition 
+{
+    border-top: none;
+    border-top-right-radius: 5px;
+}
+#editions_links > a.last_edition 
+{
+    border-bottom: none;
+    border-bottom-right-radius: 5px;
+}
+#editions_links > a#this_edition 
+{
+    background: #FFFFEE; /* barely yellow */
+}
+#editions_links > a:hover 
+{
+    border-color: #D0D0D0 #AAAAAA #AAAAAA #D0D0D0; 
+}
+#editions_links > a:active 
+{ 
+    background: #FFFFEE; /* barely yellow */
+    border-color: #AAAAAA #D0D0D0 #D0D0D0 #AAAAAA; 
+}
+
+#editions:hover > #editions_links 
+{
+    display: block; /* unhide links */
+    position: fixed;
+    width: 120px; /* 120 */
+    margin-left: 160px; /* 160 */
+    background: #EEEEFF; /* barely blue */
+    border: solid 1px;
+    border-color: #D0D0D0 #AAAAAA #AAAAAA #D0D0D0; 
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 5;
+}
+
+
+#menu  > a /* links */
+{
+    display: block;
+    width: 157px; /* 158 - 1 (from border left) */
+    text-decoration: none; 
+    color: #303030; /* font-colour */
+    margin: 0.5em 0 0.5em;
+    padding: 0.5em 0 0.5em; 
+    border: solid #E0E0E0 1px;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    overflow-x: hidden;
+}
+#menu  > a:hover
+{ 
+    background: #EEEEFF; /* barely blue */
+    border-color: #D0D0D0 #AAAAAA #AAAAAA #D0D0D0; 
+}
+#menu  > a:active 
+{ 
+    background: #FFFFEE; /* barely yellow */
+    border-color: #AAAAAA #D0D0D0 #D0D0D0 #AAAAAA; 
+}
+#menu  > a#selected
+{ 
+    background: #FFFFEE; /* barely yellow */
+}
+
+
+
+#content 
+{
+    margin-left: 160px; /* 160 */
+    margin-right: 40px; /* 40 */
+    background: #FFFFEE; /* barely yellow */
+    outline: #D0D0D0 solid 2px;
+}
+#top_img
+{
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+#top_img > img 
+{
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+#top_titles
+{
+    display: table;
+    font-weight: bold;
+    color: #303030; /* font-colour */
+    position: relative;
+    text-shadow: 0.03em 0.03em 0.04em #EEEEFF;
+}
+#top_titles > div
+{
+    background: #9999FF; /* semi blue */
+    background-color: rgba(153,153,255,0.8);/* semi blue */
+    padding: 0 0.2em 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: table;
+}
+#title
+{
+    font-size: 3em;
+    margin-top: 0.5em;
+    margin-bottom: 0.2em;
+}
+#subtitle
+{
+    font-size: 1.5em;
+}
+
+#top_langs
+{
+    float: right;
+    position: relative;
+    padding: 0.3em 0.5em 0.3em;
+    margin-top: 2em;
+    color: #303030; /* font-colour */
+    text-shadow: 0.03em 0.03em 0.04em #EEEEFF;
+    text-align: center;
+    background: #9999FF; /* semi blue */
+    background-color: rgba(153,153,255,0.8);/* semi blue */
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#top_langs > a
+{
+    padding-bottom: 0.1em;
+    display: block;
+    text-decoration: none;
+    color: #303030; /* font-colour */
+}
+#top_langs > a:hover
+{
+    font-weight: bold;
+}
+
+
+
+
+#content > #text
+{
+    padding: 0 2em 8em;
+    position: relative;
+}
+#text p 
+{ 
+    text-align: justify; 
+}
+#text img
+{ 
+    vertical-align: middle; 
+}
+
+#text a
+{ 
+    color: #FF0000; 
+    text-decoration: underline; 
+}
+#text a:visited 
+{ 
+    color: #CC5070; 
+}
+
+
+
+
+
+
+
+/*
+font-family: 'Dosis', sans-serif;
+font-family: 'Rosarivo', serif;
+font-family: 'Pompiere', cursive;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Averia Serif Libre', cursive;
+font-family: 'Josefin Slab', serif;
+font-family: 'Fredoka One', cursive;
+font-family: 'Copse', serif;
+font-family: 'Asap', sans-serif;
+font-family: 'Raleway', cursive;
+font-family: 'Lobster Two', cursive;
+*/
